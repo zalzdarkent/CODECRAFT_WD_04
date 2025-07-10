@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { useScrollAnimation, animations } from "@/hooks/useScrollAnimation";
+import Image from "next/image";
 
 const PHRASES = [
-  "Hi, I'm John Doe",
+  "Hi, I'm Alif Fadillah Ummar",
   "Full Stack Web Developer", 
   "Problem Solver"
 ];
@@ -131,16 +132,17 @@ export default function Hero() {
           >
             <div className="relative">
               <div className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[400px] lg:h-[400px] rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center border-4 border-primary/20 overflow-hidden">
-                <div className="w-72 h-72 sm:w-88 sm:h-88 lg:w-[360px] lg:h-[360px] rounded-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center relative overflow-hidden">
-                  {/* Professional placeholder with modern design */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5"></div>
-                  <div className="relative text-center">
-                    <div className="w-32 h-32 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
-                      <span className="text-4xl">👨‍💻</span>
-                    </div>
-                    <div className="text-primary font-semibold text-lg">Professional Photo</div>
-                    <div className="text-muted-foreground text-sm">John Doe</div>
-                  </div>
+                <div className="w-72 h-72 sm:w-88 sm:h-88 lg:w-[360px] lg:h-[360px] rounded-full overflow-hidden relative">
+                  <Image
+                    src="/images/1744690434658.jpeg"
+                    alt="John Doe - Professional Photo"
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 640px) 288px, (max-width: 1024px) 352px, 360px"
+                  />
+                  {/* Overlay untuk memberikan efek professional */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 mix-blend-overlay"></div>
                 </div>
               </div>
               <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg">
