@@ -53,7 +53,7 @@ export default function Hero() {
     <section 
       ref={heroRef}
       id="home" 
-      className={`min-h-screen flex items-center justify-center pt-16 bg-gradient-to-br from-background to-muted/20 ${animations.fadeInUp.transition} ${
+      className={`min-h-screen flex items-center justify-center pt-16 pb-8 sm:pb-12 lg:pb-16 bg-gradient-to-br from-background to-muted/20 ${animations.fadeInUp.transition} ${
         heroVisible ? animations.fadeInUp.animate : animations.fadeInUp.initial
       }`}
     >

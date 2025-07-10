@@ -9,9 +9,9 @@ import FloatingBackToTop from "@/components/FloatingBackToTop";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <About />
         <Skills />

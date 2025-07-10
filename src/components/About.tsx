@@ -51,7 +51,7 @@ export default function About() {
   const clientsCount = useCountUp(20, 1800, statsAnimation.isVisible);
 
   return (
-    <section id="about" className="py-16 bg-muted/30">
+    <section id="about" className="py-20 mt-8 sm:mt-12 lg:mt-16 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

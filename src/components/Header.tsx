@@ -108,18 +108,18 @@ export default function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border transform transition-all duration-1000 ease-out ${
       isLoaded ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
     }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-3 sm:px-4 lg:px-6 xl:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <h1 className="text-xl sm:text-2xl font-bold text-primary">
-              Portfolio
-            </h1>
-          </div>
+          <div className="flex items-center justify-between h-16 gap-2 overflow-hidden">
+            {/* Logo */}
+            <div className="flex-shrink-0 min-w-0">
+              <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-primary truncate">
+                Portfolio
+              </h1>
+            </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-1">
+          <nav className="hidden md:flex space-x-1 flex-1 justify-center min-w-0">
             {menuItems.map((item) => {
               const isActive = activeSection === item.href.replace('#', '');
               return (
@@ -130,7 +130,7 @@ export default function Header() {
                     e.preventDefault();
                     smoothScrollTo(item.href);
                   }}
-                  className={`relative px-4 py-2 font-medium transition-all duration-300 ease-out cursor-pointer group ${
+                  className={`relative px-3 lg:px-4 py-2 font-medium transition-all duration-300 ease-out cursor-pointer group ${
                     isActive 
                       ? 'text-primary' 
                       : 'text-foreground hover:text-primary'
@@ -152,19 +152,22 @@ export default function Header() {
           </nav>
 
           {/* Right side controls */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0 min-w-0">
             {/* Theme Toggle */}
-            <ThemeToggle />
+            <div className="flex-shrink-0">
+              <ThemeToggle />
+            </div>
             
             {/* Mobile menu button */}
-            <div className="md:hidden">
+            <div className="md:hidden flex-shrink-0">
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Toggle menu"
+                className="h-9 w-9 sm:h-10 sm:w-10"
               >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                {isMenuOpen ? <X size={18} className="sm:w-5 sm:h-5" /> : <Menu size={18} className="sm:w-5 sm:h-5" />}
               </Button>
             </div>
           </div>

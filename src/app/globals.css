@@ -118,6 +118,22 @@
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+  }
+  html {
+    overflow-x: hidden;
+  }
+}
+
+/* Prevent horizontal scroll and ensure proper layout */
+@layer utilities {
+  .no-scroll-x {
+    overflow-x: hidden;
+  }
+  
+  .prevent-overflow {
+    min-width: 0;
+    max-width: 100%;
   }
 }
 
