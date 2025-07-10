@@ -120,3 +120,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom animations for skills progress bar */
+@keyframes progressFill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: var(--target-width);
+  }
+}
+
+.progress-fill {
+  animation: progressFill 1s ease-out;
+}
